@@ -1,5 +1,18 @@
+const express = require("express")
+const dotenv = require('dotenv')
+dotenv.config()
+const app = express()
+const PORT = process.env.PORT
+const ip = process.env.IP || 'localhost'
+console.log(PORT)
 const {Telegraf} = require('telegraf')
 const badPhrases = require("./badPhrases");
+
+
+app.listen(PORT || 5000, () => {
+  console.log(`Server start at http://${ip}:${PORT}`)
+})
+
 
 const bot = new Telegraf("1794353601:AAFFNql3Mxf5RSPkm_uan8ejtnY6jPMmoyE")
 const phrase = badPhrases.BAD_PHRASES.map(item => item.toLowerCase());
