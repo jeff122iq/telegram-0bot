@@ -2,10 +2,10 @@
   "name": "telegram-bot-test",
   "version": "1.0.0",
   "description": "",
-  "main": "bot.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node bot",
-    "dev": "nodemon bot"
+    "start": "node index",
+    "dev": "nodemon index"
   },
   "keywords": [],
   "author": "",

@@ -14,7 +14,7 @@ app.listen(PORT || 5000, () => {
 })
 
 
-const bot = new Telegraf("1794353601:AAFFNql3Mxf5RSPkm_uan8ejtnY6jPMmoyE")
+const index = new Telegraf("1794353601:AAFFNql3Mxf5RSPkm_uan8ejtnY6jPMmoyE")
 const phrase = badPhrases.BAD_PHRASES.map(item => item.toLowerCase());
 
 function onCheckBadPhrase(ctx) {
@@ -28,8 +28,8 @@ function onCheckBadPhrase(ctx) {
   return checkedMessage;
 }
 
-bot.on('sticker', (ctx) => ctx.reply('HUI'))
-bot.on("text", (ctx) => {
+index.on('sticker', (ctx) => ctx.reply('HUI'))
+index.on("text", (ctx) => {
 
   if ( onCheckBadPhrase(ctx).length === 1) {
     ctx.reply('Братан, будь вежлив, не выражайся!')
@@ -37,4 +37,4 @@ bot.on("text", (ctx) => {
     ctx.reply('Ты ох*ел чертило??? ПШЕЛ НАХ*Й ОТСЮДА!!!')
   }
 })
-bot.launch()
+index.launch()
